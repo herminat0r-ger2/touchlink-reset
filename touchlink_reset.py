@@ -60,17 +60,6 @@ ID. The reset is unicast to the IEEE address reported in the Scan Response.
 An NCP reporting a successful transmit only confirms that it accepted the
 frame. Practical confirmation is a visible Identify indication followed by a
 successful device reset and rejoin.
-
-===============================================================================
-PROTOCOL SETTINGS: CHANGE ONLY WITH A COMPATIBILITY REASON
-===============================================================================
-
-* SCAN_ZIGBEE_INFORMATION is 0x04 to match current zigbee-herdsman.
-* IDENTIFY_TO_RESET_DELAY_SECONDS is 2.0 to match its reset flow.
-* The coordinator's actual PAN ID is read before entering MFG mode and is put
-  into every outgoing frame. It is logged even when it is 0x0000.
-* Do not generate a different transaction ID after receiving the Scan Response;
-  the target expects the one from its Scan Request.
 """
 
 # -----------------------------------------------------------------------------
@@ -182,10 +171,18 @@ class ScanResp(EzspStruct):
     )
 
 __version__ = "1.0.0"
+"""
+===============================================================================
+PROTOCOL SETTINGS: CHANGE ONLY WITH A COMPATIBILITY REASON
+===============================================================================
 
-# -----------------------------------------------------------------------------
-# PROTOCOL COMPATIBILITY SETTINGS (normally do not edit)
-# -----------------------------------------------------------------------------
+* SCAN_ZIGBEE_INFORMATION is 0x04 to match current zigbee-herdsman.
+* IDENTIFY_TO_RESET_DELAY_SECONDS is 2.0 to match its reset flow.
+* The coordinator's actual PAN ID is read before entering MFG mode and is put
+  into every outgoing frame. It is logged even when it is 0x0000.
+* Do not generate a different transaction ID after receiving the Scan Response;
+  the target expects the one from its Scan Request.
+"""
 IDENTIFY_TO_RESET_DELAY_SECONDS = 2.0
 SCAN_ZIGBEE_INFORMATION = 0x04
 SCAN_SEQUENCE = 1
