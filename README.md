@@ -2,7 +2,7 @@
 
 A standalone Python utility for resetting one nearby Zigbee Light Link (ZLL) / Touchlink device through a Silicon Labs EFR32 / EmberZNet coordinator.
 
-It is designed as a workaround for cases where normal Zigbee2MQTT Touchlink scanning does not receive Scan Responses from an EFR32 coordinator.
+It is designed as a workaround for cases where normal Zigbee2MQTT Touchlink scanning does not receive Scan Responses from an EFR32 coordinator. See https://github.com/Koenkk/zigbee2mqtt/issues/25823
 
 ## What it does
 
